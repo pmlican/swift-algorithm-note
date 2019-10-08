@@ -62,9 +62,9 @@
 			children = (
 				E6E3CA5B234C953C00781FB6 /* AppDelegate.swift */,
 				E6E3CA5D234C953C00781FB6 /* ViewController.swift */,
-				E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */,
 				E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */,
 				E6E3CA6D234C956600781FB6 /* LearnTree.swift */,
+				E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */,
 				E6E3CA5F234C953C00781FB6 /* Main.storyboard */,
 				E6E3CA62234C953D00781FB6 /* Assets.xcassets */,
 				E6E3CA64234C953D00781FB6 /* LaunchScreen.storyboard */,
