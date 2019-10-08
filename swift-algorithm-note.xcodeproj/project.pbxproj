@@ -15,6 +15,8 @@
 		E6E3CA70234C956600781FB6 /* LearnTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA6D234C956600781FB6 /* LearnTree.swift */; };
 		E6E3CA71234C956600781FB6 /* LearnBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */; };
 		E6E3CA72234C956600781FB6 /* LearnBinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */; };
+		FB3EA321234CE03B00DA3F85 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */; };
+		FB3EA322234CE03B00DA3F85 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3EA320234CE03B00DA3F85 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		E6E3CA6D234C956600781FB6 /* LearnTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnTree.swift; sourceTree = "<group>"; };
 		E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearch.swift; sourceTree = "<group>"; };
 		E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearchTree.swift; sourceTree = "<group>"; };
+		FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
+		FB3EA320234CE03B00DA3F85 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */,
 				E6E3CA6D234C956600781FB6 /* LearnTree.swift */,
 				E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */,
+				FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */,
+				FB3EA320234CE03B00DA3F85 /* Queue.swift */,
 				E6E3CA5F234C953C00781FB6 /* Main.storyboard */,
 				E6E3CA62234C953D00781FB6 /* Assets.xcassets */,
 				E6E3CA64234C953D00781FB6 /* LaunchScreen.storyboard */,
@@ -145,8 +151,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E6E3CA5E234C953C00781FB6 /* ViewController.swift in Sources */,
+				FB3EA322234CE03B00DA3F85 /* Queue.swift in Sources */,
 				E6E3CA5C234C953C00781FB6 /* AppDelegate.swift in Sources */,
 				E6E3CA72234C956600781FB6 /* LearnBinarySearchTree.swift in Sources */,
+				FB3EA321234CE03B00DA3F85 /* InsertionSort.swift in Sources */,
 				E6E3CA70234C956600781FB6 /* LearnTree.swift in Sources */,
 				E6E3CA71234C956600781FB6 /* LearnBinarySearch.swift in Sources */,
 			);
