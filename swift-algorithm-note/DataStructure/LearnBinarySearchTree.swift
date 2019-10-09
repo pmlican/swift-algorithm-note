@@ -11,6 +11,18 @@ import Foundation
 //Notice how each left child is smaller than its parent node, and each right child is greater than its parent node. This is the key feature of a binary search tree.
 //二叉树性质：左子节点小于父节点，有子节点大于父节点
 //插入和查找都是O(h)，h为树的高度，最低的叶子到根节点的距离
+/*
+ A binary search tree is balanced when its left and right subtrees contain the same number of nodes. In that case, the height of the tree is log(n), where n is the number of nodes. That is the ideal situation.
+ 
+ If one branch is significantly longer than the other, searching becomes very slow. We end up checking more values than we need. In the worst case, the height of the tree can become n. Such a tree acts like a linked list than a binary search tree, with performance degrading to O(n). Not good!
+ 
+ One way to make the binary search tree balanced is to insert the nodes in a totally random order. On average that should balance out the tree well, but it not guaranteed, nor is it always practical.
+ 
+ The other solution is to use a self-balancing binary tree. This type of data structure adjusts the tree to keep it balanced after you insert or delete nodes. To see examples, check AVL tree and red-black tree.
+
+当树不平衡时，会导致搜索变成O(n)
+ */
+
 public class BinarySearchTree<T: Comparable> {
     private(set) public var value: T
     private(set) public var parent: BinarySearchTree?
@@ -54,7 +66,7 @@ public class BinarySearchTree<T: Comparable> {
     public var hasBothChildren: Bool {
         return hasLeftChild && hasRightChild
     }
-    
+    //当前节点下面所有子树的节点
     public var count: Int {
         return (left?.count ?? 0) + 1 + (right?.count ?? 0)
     }
@@ -62,7 +74,55 @@ public class BinarySearchTree<T: Comparable> {
     
 }
 
-//delete
+//MARK: Valid
+extension BinarySearchTree {
+    //检查左节点是否小于当前节点，右节点是否大于当前节点
+    public func isBST(minValue: T, maxValue: T) -> Bool {
+        if value < minValue || value > maxValue {
+            return false
+        }
+        let leftBST = left?.isBST(minValue: minValue, maxValue: value) ?? true
+        let rightBST = right?.isBST(minValue: value, maxValue: maxValue) ?? true
+        return leftBST && rightBST
+    }
+}
+
+//MARK: predecessor successor
+//前任和继任者  O(h)
+extension BinarySearchTree {
+    //如果有左树，直接找左树最大值,如果没有左树，回溯父节点找父节点更小的值
+    public func predecessor() -> BinarySearchTree<T>? {
+        if let left = left {
+            return left.maxium()
+        } else {
+            var node = self
+            while let parent = node.parent {
+                if parent.value < value {
+                    return parent
+                }
+                node = parent
+            }
+            return nil
+        }
+    }
+    //找继任者，操作和上面是镜像操作
+    public func successor() -> BinarySearchTree<T>? {
+        if let right = right {
+            return right.minium()
+        } else {
+            var node = self
+            while let parent = node.parent {
+                if parent.value > value {
+                    return parent
+                }
+                node = parent
+            }
+            return nil
+        }
+    }
+}
+
+//MARK: delete
 extension BinarySearchTree {
     private func reconnectParentTo(node: BinarySearchTree?) {
         if let parent = parent {
@@ -132,7 +192,7 @@ extension BinarySearchTree {
             return 1 + max(left?.height() ?? 0, right?.height() ?? 0)
         }
     }
-    
+    //You can also calculate the depth of a node, which is the distance to the root
     public func depth() -> Int {
         var node = self
         var edges = 0
@@ -144,7 +204,7 @@ extension BinarySearchTree {
     }
 }
 
-
+//MARK: Search traverse
 extension BinarySearchTree {
     //现在插入节点需要随机数插入，如果插入的是排序的元素，则数组的形状不正确
     public func insert(value: T) {
@@ -243,5 +303,82 @@ extension BinarySearchTree: CustomStringConvertible {
             s += " -> (\(right.description))"
         }
         return s
+    }
+}
+
+
+// Enum 版本
+/*
+ The difference is reference semantics versus value semantics. Making a change to the class-based tree will update that same instance in memory, but the enum-based tree is immutable -- any insertions or deletions will give you an entirely new copy of the tree
+ 区别在于，插入和删除会返回一个拷贝，要用变量重新赋值,取决于你怎么使用
+ */
+
+public enum BinarySearchTree1<T: Comparable> {
+    case Empty
+    case Leaf(T)
+    //This is marked indirect so that it can hold BinarySearchTree values. Without indirect you can't make recursive enums
+    // parent node 可以不需要，但某些操作实现会比较麻烦
+    indirect case Node(left:BinarySearchTree1,value:T,right:BinarySearchTree1)
+}
+extension BinarySearchTree1 {
+    public var count: Int {
+        switch self {
+        case .Empty: return 0
+        case .Leaf: return 1
+        case let .Node(left, _, right): return left.count + 1 + right.count
+        }
+    }
+    public var height: Int {
+        switch self {
+        case .Empty: return -1
+        case .Leaf: return 0
+        case let .Node(left, _, right): return 1 + max(left.height, right.height)
+        }
+    }
+    public func insert(newValue: T) -> BinarySearchTree1 {
+        switch self {
+        //其余两个都没调用insert 是出口
+        case .Empty:
+            return .Leaf(newValue)
+        case .Leaf(let value):
+            if newValue < value {
+                return .Node(left: .Leaf(newValue), value: value, right: .Empty)
+            } else {
+                return .Node(left: .Empty, value: value, right: .Leaf(newValue))
+            }
+        //insert 是递归入口
+        case let .Node(left, value, right):
+            if newValue < value {
+                return .Node(left: left.insert(newValue: newValue), value: value, right: right)
+            } else {
+                return .Node(left: left, value: value, right: right.insert(newValue: newValue))
+            }
+        }
+    }
+    public func search(x: T) -> BinarySearchTree1? {
+        switch self {
+        case .Empty:
+            return nil
+        case .Leaf(let y):
+            return (x == y) ? self : nil
+        case let .Node(left, y, right):
+            if x < y {
+                return left.search(x: x)
+            } else if y < x {
+                return right.search(x: x)
+            } else {
+                return self
+            }
+        }
+    }
+}
+extension BinarySearchTree1: CustomDebugStringConvertible {
+    public var debugDescription: String {
+        switch self {
+        case .Empty: return "."
+        case .Leaf(let value): return "\(value)"
+        case let .Node(left, value, right):
+            return "(\(left.debugDescription) <- \(value) -> \(right.debugDescription))"
+        }
     }
 }

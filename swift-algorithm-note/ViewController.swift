@@ -14,7 +14,34 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        testBinarySearch()
 //        testTree()
-        testBinarySearchTree()
+//        testBinarySearchTree()
+//        testBinarySearchTree1()
+        testMergeSort()
+    }
+    
+    
+    func testMergeSort() {
+        let arr = [2,1,5,4,9]
+        let sorted = MergeSort.topDown(arr)
+        print(sorted)
+    }
+    
+    /*
+        7
+      /    \
+      2     10
+     /  \   /
+    1   6  9
+     */
+    
+    func testBinarySearchTree1() {
+        var tree = BinarySearchTree1.Leaf(7)
+        tree = tree.insert(newValue: 2)
+        tree = tree.insert(newValue: 6)
+        tree = tree.insert(newValue: 10)
+        tree = tree.insert(newValue: 9)
+        tree = tree.insert(newValue: 1)
+        print(tree)
     }
     
     /*
@@ -33,6 +60,14 @@ class ViewController: UIViewController {
         print(tree.search(value: 2))
         print(tree.search(value: 6))
         
+        //root count 6
+        if let root = tree.search(7) {
+            print("root count \(root.count)")
+        }
+        // height 2  depth 0  depth和height刚好相反，height是最低节点到根节点距离，depth是当前节点到根节点的距离
+        print("height \(tree.height())  depth \(tree.depth()) ")
+        
+        print("*****************")
         //三种顺序不一样
         tree.traverseInOrder { value in print(value) }
         tree.traversePreOrder { value in print(value) }
@@ -45,6 +80,20 @@ class ViewController: UIViewController {
         if let node9 = tree.search(9) {
             print(node9.depth())
         }
+        //((1) <-2 -> (5)) <-7 -> ((9) <-10)
+        //((1 -> (100)) <-2 -> (5)) <-7 -> ((9) <-10)
+        //So the new 100 node is in the wrong place in the tree!
+        //As a result, doing tree.search(100) gives nil.
+        
+        if let node1 = tree.search(1) {
+            //check valid
+            print(tree.isBST(minValue: Int.min, maxValue: Int.max))
+            node1.insert(value: 100)
+            print(tree.search(100))
+            print(tree)
+            print(tree.isBST(minValue: Int.min, maxValue: Int.max))
+        }
+        
 
     }
 

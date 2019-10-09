@@ -27,6 +27,8 @@ public class TreeNode<T> {
 }
 
 // custom print tree
+//tree root node leaf
+//树包含根，节点，叶子
 extension TreeNode: CustomStringConvertible {
     public var description: String {
         var s = "\(value)"

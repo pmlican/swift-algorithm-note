@@ -12,12 +12,15 @@
 		E6E3CA61234C953C00781FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E3CA5F234C953C00781FB6 /* Main.storyboard */; };
 		E6E3CA63234C953D00781FB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6E3CA62234C953D00781FB6 /* Assets.xcassets */; };
 		E6E3CA66234C953D00781FB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E3CA64234C953D00781FB6 /* LaunchScreen.storyboard */; };
-		E6E3CA74234DD9FA00781FB6 /* LearnMergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA73234DD9FA00781FB6 /* LearnMergeSort.swift */; };
-		E6E3CA7A234DECA400781FB6 /* LearnBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */; };
-		E6E3CA7B234DECA400781FB6 /* LearnTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA78234DECA300781FB6 /* LearnTree.swift */; };
-		E6E3CA7C234DECA400781FB6 /* LearnBinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */; };
+		E6E3CA70234C956600781FB6 /* LearnTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA6D234C956600781FB6 /* LearnTree.swift */; };
+		E6E3CA71234C956600781FB6 /* LearnBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */; };
+		E6E3CA72234C956600781FB6 /* LearnBinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */; };
+<<<<<<< HEAD
 		FB3EA321234CE03B00DA3F85 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */; };
 		FB3EA322234CE03B00DA3F85 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3EA320234CE03B00DA3F85 /* Queue.swift */; };
+=======
+		E6E3CA74234DD9FA00781FB6 /* LearnMergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA73234DD9FA00781FB6 /* LearnMergeSort.swift */; };
+>>>>>>> 学习二分搜索树和归并排序
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,12 +31,18 @@
 		E6E3CA62234C953D00781FB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6E3CA65234C953D00781FB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6E3CA67234C953D00781FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E6E3CA73234DD9FA00781FB6 /* LearnMergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LearnMergeSort.swift; path = ../LearnMergeSort.swift; sourceTree = "<group>"; };
-		E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnBinarySearch.swift; path = ../LearnBinarySearch.swift; sourceTree = "<group>"; };
-		E6E3CA78234DECA300781FB6 /* LearnTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnTree.swift; sourceTree = "<group>"; };
-		E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearchTree.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+		E6E3CA6D234C956600781FB6 /* LearnTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnTree.swift; sourceTree = "<group>"; };
+		E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearch.swift; sourceTree = "<group>"; };
+		E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearchTree.swift; sourceTree = "<group>"; };
 		FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		FB3EA320234CE03B00DA3F85 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+=======
+		E6E3CA6D234C956600781FB6 /* LearnTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnTree.swift; path = ../LearnTree.swift; sourceTree = "<group>"; };
+		E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnBinarySearch.swift; path = ../LearnBinarySearch.swift; sourceTree = "<group>"; };
+		E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnBinarySearchTree.swift; path = ../LearnBinarySearchTree.swift; sourceTree = "<group>"; };
+		E6E3CA73234DD9FA00781FB6 /* LearnMergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LearnMergeSort.swift; path = ../LearnMergeSort.swift; sourceTree = "<group>"; };
+>>>>>>> 学习二分搜索树和归并排序
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +77,16 @@
 			children = (
 				E6E3CA5B234C953C00781FB6 /* AppDelegate.swift */,
 				E6E3CA5D234C953C00781FB6 /* ViewController.swift */,
+<<<<<<< HEAD
+				E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */,
+				E6E3CA6D234C956600781FB6 /* LearnTree.swift */,
+				E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */,
+				FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */,
+				FB3EA320234CE03B00DA3F85 /* Queue.swift */,
+=======
 				E6E3CA76234DDAB200781FB6 /* DataStructure */,
 				E6E3CA75234DDAA400781FB6 /* Sort */,
+>>>>>>> 学习二分搜索树和归并排序
 				E6E3CA5F234C953C00781FB6 /* Main.storyboard */,
 				E6E3CA62234C953D00781FB6 /* Assets.xcassets */,
 				E6E3CA64234C953D00781FB6 /* LaunchScreen.storyboard */,
@@ -81,7 +98,7 @@
 		E6E3CA75234DDAA400781FB6 /* Sort */ = {
 			isa = PBXGroup;
 			children = (
-				FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */,
+				E6E3CA6E234C956600781FB6 /* LearnBinarySearch.swift */,
 				E6E3CA73234DD9FA00781FB6 /* LearnMergeSort.swift */,
 			);
 			path = Sort;
@@ -90,10 +107,8 @@
 		E6E3CA76234DDAB200781FB6 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
-				E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */,
-				E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */,
-				E6E3CA78234DECA300781FB6 /* LearnTree.swift */,
-				FB3EA320234CE03B00DA3F85 /* Queue.swift */,
+				E6E3CA6F234C956600781FB6 /* LearnBinarySearchTree.swift */,
+				E6E3CA6D234C956600781FB6 /* LearnTree.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -171,12 +186,15 @@
 			files = (
 				E6E3CA5E234C953C00781FB6 /* ViewController.swift in Sources */,
 				FB3EA322234CE03B00DA3F85 /* Queue.swift in Sources */,
-				E6E3CA7A234DECA400781FB6 /* LearnBinarySearch.swift in Sources */,
 				E6E3CA5C234C953C00781FB6 /* AppDelegate.swift in Sources */,
+				E6E3CA72234C956600781FB6 /* LearnBinarySearchTree.swift in Sources */,
+<<<<<<< HEAD
 				FB3EA321234CE03B00DA3F85 /* InsertionSort.swift in Sources */,
-				E6E3CA7B234DECA400781FB6 /* LearnTree.swift in Sources */,
+=======
 				E6E3CA74234DD9FA00781FB6 /* LearnMergeSort.swift in Sources */,
-				E6E3CA7C234DECA400781FB6 /* LearnBinarySearchTree.swift in Sources */,
+>>>>>>> 学习二分搜索树和归并排序
+				E6E3CA70234C956600781FB6 /* LearnTree.swift in Sources */,
+				E6E3CA71234C956600781FB6 /* LearnBinarySearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

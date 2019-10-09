@@ -8,6 +8,7 @@
 
 import Foundation
 
+//二分搜索 
 struct LearnBinarySearch {
     //递归实现,时间复杂度是 O(log n),因为一直在折半缩小数组的范围，所以复杂度为log2N
     //note1: 这个方法只有在数组已经排好序的情况才有效
