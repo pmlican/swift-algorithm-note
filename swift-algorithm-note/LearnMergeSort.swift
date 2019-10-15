@@ -10,11 +10,13 @@ import Foundation
 
 
 // merge sort 归并排序
-//时间复杂度为 O(nlogn)
+//时间复杂度为 O(nlogn)，优点是稳定排序，即是排序后不改变原来的元素的位置，缺点是需要一个和需要排序数组长度一致的临时数组
 
 
 struct MergeSort {
     //[2,1,5,4,9]
+    //http://www.algomation.com/player?algorithm=58bb32885b2b830400b05123
+    //动图展示， 自上而下的实施(递归法)
     static func topDown(_ array:[Int]) -> [Int] {
         guard array.count > 1 else {return array}
         
@@ -62,4 +64,57 @@ struct MergeSort {
         }
         return orderedPile
     }
+}
+
+//Bottom-up implementation
+//http://www.mathcs.emory.edu/~cheung/Courses/171/Syllabus/7-Sort/merge-sort5.html
+//参考链接，图文讲解，自下而上的实施(迭代)
+//[2,1,5,4,9]
+extension MergeSort {
+    static func bottomUp<T>(_ a: [T], _ isOrderedBefore: (T, T) -> Bool) -> [T] {
+        let n = a.count
+        
+        var z = [a, a]
+        var d = 0
+        
+        var width = 1
+        while width < n {
+            var i = 0
+            while i < n {
+                var j = i
+                var l = i
+                var r = i + width
+                
+                let lmax = min(l + width, n)
+                let rmax = min(r + width, n)
+                //[1-d]写入 [d]读取
+                while l < lmax && r < rmax {
+                    if isOrderedBefore(z[d][l],z[d][r]) {
+                        z[1-d][j] = z[d][l]
+                        l += 1
+                    } else {
+                        z[1-d][j] = z[d][r]
+                        r += 1
+                    }
+                    j += 1
+                }
+                while l < lmax {
+                    z[1-d][j] = z[d][l]
+                    j += 1
+                    l += 1
+                }
+                while r < rmax {
+                    z[1-d][j] = z[d][r]
+                    j += 1
+                    r += 1
+                }
+                i += width*2
+            }
+            
+            width *= 2
+            d = 1 - d
+        }
+        return z[d]
+    }
+
 }

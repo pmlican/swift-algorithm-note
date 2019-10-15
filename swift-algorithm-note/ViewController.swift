@@ -16,9 +16,40 @@ class ViewController: UIViewController {
 //        testTree()
 //        testBinarySearchTree()
 //        testBinarySearchTree1()
-        testMergeSort()
+//        testMergeSort()
+//        testMergeSort1()
+//        testBoyerMoore()
+//        testStride()
+        testHeap()
     }
     
+    func testHeap() {
+        let arr = [1,2,10,7,5]
+        let heap = Heap(array: arr, sort: >)
+        print(heap.nodes)
+    }
+    
+    func testStride() {
+        let arr = [1,3,5,6,2]
+        for i in stride(from: (arr.count/2 - 1), through: 0, by: -1) {
+            print("\(i)=====>\(arr[i])")
+        }
+    }
+    
+    func testBoyerMoore() {
+        let s = "Hello, World"
+        if let index = s.index(of: "World") {
+            print(index)
+            let i = s.distance(from: s.startIndex, to: index)
+            print(i)
+        }
+    }
+    
+    func testMergeSort1() {
+        let arr = [2,1,5,4,9]
+        let sorted = MergeSort.bottomUp(arr, <)
+        print(sorted)
+    }
     
     func testMergeSort() {
         let arr = [2,1,5,4,9]

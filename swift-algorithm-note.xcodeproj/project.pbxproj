@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6886E5A2355A33D00FFA2B6 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6886E592355A33D00FFA2B6 /* PriorityQueue.swift */; };
+		E6886E5C2355B92800FFA2B6 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6886E5B2355B92800FFA2B6 /* Heap.swift */; };
 		E6E3CA5C234C953C00781FB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA5B234C953C00781FB6 /* AppDelegate.swift */; };
 		E6E3CA5E234C953C00781FB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA5D234C953C00781FB6 /* ViewController.swift */; };
 		E6E3CA61234C953C00781FB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6E3CA5F234C953C00781FB6 /* Main.storyboard */; };
@@ -16,11 +18,15 @@
 		E6E3CA7A234DECA400781FB6 /* LearnBinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */; };
 		E6E3CA7B234DECA400781FB6 /* LearnTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA78234DECA300781FB6 /* LearnTree.swift */; };
 		E6E3CA7C234DECA400781FB6 /* LearnBinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */; };
+		E6E3CA7E23545ECA00781FB6 /* Boyer-Moore.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA7D23545ECA00781FB6 /* Boyer-Moore.swift */; };
+		E6E3CA80235552A100781FB6 /* Deque.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6E3CA7F235552A100781FB6 /* Deque.swift */; };
 		FB3EA321234CE03B00DA3F85 /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */; };
 		FB3EA322234CE03B00DA3F85 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3EA320234CE03B00DA3F85 /* Queue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E6886E592355A33D00FFA2B6 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		E6886E5B2355B92800FFA2B6 /* Heap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		E6E3CA58234C953C00781FB6 /* swift-algorithm-note.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "swift-algorithm-note.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E3CA5B234C953C00781FB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E6E3CA5D234C953C00781FB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +38,8 @@
 		E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnBinarySearch.swift; path = ../LearnBinarySearch.swift; sourceTree = "<group>"; };
 		E6E3CA78234DECA300781FB6 /* LearnTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnTree.swift; sourceTree = "<group>"; };
 		E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearchTree.swift; sourceTree = "<group>"; };
+		E6E3CA7D23545ECA00781FB6 /* Boyer-Moore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Boyer-Moore.swift"; sourceTree = "<group>"; };
+		E6E3CA7F235552A100781FB6 /* Deque.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deque.swift; sourceTree = "<group>"; };
 		FB3EA31F234CE03B00DA3F85 /* InsertionSort.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		FB3EA320234CE03B00DA3F85 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -68,6 +76,7 @@
 			children = (
 				E6E3CA5B234C953C00781FB6 /* AppDelegate.swift */,
 				E6E3CA5D234C953C00781FB6 /* ViewController.swift */,
+				E6E3CA7D23545ECA00781FB6 /* Boyer-Moore.swift */,
 				E6E3CA76234DDAB200781FB6 /* DataStructure */,
 				E6E3CA75234DDAA400781FB6 /* Sort */,
 				E6E3CA5F234C953C00781FB6 /* Main.storyboard */,
@@ -94,6 +103,9 @@
 				E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */,
 				E6E3CA78234DECA300781FB6 /* LearnTree.swift */,
 				FB3EA320234CE03B00DA3F85 /* Queue.swift */,
+				E6E3CA7F235552A100781FB6 /* Deque.swift */,
+				E6886E592355A33D00FFA2B6 /* PriorityQueue.swift */,
+				E6886E5B2355B92800FFA2B6 /* Heap.swift */,
 			);
 			path = DataStructure;
 			sourceTree = "<group>";
@@ -171,11 +183,15 @@
 			files = (
 				E6E3CA5E234C953C00781FB6 /* ViewController.swift in Sources */,
 				FB3EA322234CE03B00DA3F85 /* Queue.swift in Sources */,
+				E6E3CA7E23545ECA00781FB6 /* Boyer-Moore.swift in Sources */,
+				E6886E5C2355B92800FFA2B6 /* Heap.swift in Sources */,
 				E6E3CA7A234DECA400781FB6 /* LearnBinarySearch.swift in Sources */,
 				E6E3CA5C234C953C00781FB6 /* AppDelegate.swift in Sources */,
 				FB3EA321234CE03B00DA3F85 /* InsertionSort.swift in Sources */,
+				E6886E5A2355A33D00FFA2B6 /* PriorityQueue.swift in Sources */,
 				E6E3CA7B234DECA400781FB6 /* LearnTree.swift in Sources */,
 				E6E3CA74234DD9FA00781FB6 /* LearnMergeSort.swift in Sources */,
+				E6E3CA80235552A100781FB6 /* Deque.swift in Sources */,
 				E6E3CA7C234DECA400781FB6 /* LearnBinarySearchTree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
