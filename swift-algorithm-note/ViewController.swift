@@ -25,8 +25,13 @@ class ViewController: UIViewController {
     
     func testHeap() {
         let arr = [1,2,10,7,5]
-        let heap = Heap(array: arr, sort: >)
+        var heap = Heap(array: arr, sort: >)
         print(heap.nodes)
+        
+        heap.insert(16)
+        print(heap.nodes)
+        
+    
     }
     
     func testStride() {

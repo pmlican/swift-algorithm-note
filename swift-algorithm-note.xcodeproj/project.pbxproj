@@ -35,7 +35,7 @@
 		E6E3CA65234C953D00781FB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E6E3CA67234C953D00781FB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E6E3CA73234DD9FA00781FB6 /* LearnMergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LearnMergeSort.swift; path = ../LearnMergeSort.swift; sourceTree = "<group>"; };
-		E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LearnBinarySearch.swift; path = ../LearnBinarySearch.swift; sourceTree = "<group>"; };
+		E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearch.swift; sourceTree = "<group>"; };
 		E6E3CA78234DECA300781FB6 /* LearnTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnTree.swift; sourceTree = "<group>"; };
 		E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearnBinarySearchTree.swift; sourceTree = "<group>"; };
 		E6E3CA7D23545ECA00781FB6 /* Boyer-Moore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Boyer-Moore.swift"; sourceTree = "<group>"; };
@@ -77,6 +77,7 @@
 				E6E3CA5B234C953C00781FB6 /* AppDelegate.swift */,
 				E6E3CA5D234C953C00781FB6 /* ViewController.swift */,
 				E6E3CA7D23545ECA00781FB6 /* Boyer-Moore.swift */,
+				E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */,
 				E6E3CA76234DDAB200781FB6 /* DataStructure */,
 				E6E3CA75234DDAA400781FB6 /* Sort */,
 				E6E3CA5F234C953C00781FB6 /* Main.storyboard */,
@@ -99,7 +100,6 @@
 		E6E3CA76234DDAB200781FB6 /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
-				E6E3CA77234DECA300781FB6 /* LearnBinarySearch.swift */,
 				E6E3CA79234DECA400781FB6 /* LearnBinarySearchTree.swift */,
 				E6E3CA78234DECA300781FB6 /* LearnTree.swift */,
 				FB3EA320234CE03B00DA3F85 /* Queue.swift */,

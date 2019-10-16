@@ -8,6 +8,7 @@
 
 import Foundation
 
+//重点是理解shiftDown和shiftUp操作，因为插入和
 public struct Heap<T> {
     
     var nodes = [T]()
@@ -15,14 +16,53 @@ public struct Heap<T> {
     //顺序准则
     private var orderCriteria: (T, T) -> Bool
     
-    
+    //创建一个空的heap
     public init(sort: @escaping (T, T) -> Bool) {
         self.orderCriteria = sort
     }
-    
+    //根据数组创建堆
     public init(array: [T], sort: @escaping (T, T) -> Bool) {
         self.orderCriteria = sort
         configureHeap(from: array)
+    }
+    
+    public mutating func insert(_ value: T) {
+        nodes.append(value)
+        shiftUp(nodes.count - 1)
+    }
+    
+    //remove root node
+    @discardableResult
+    public mutating func remove() -> T? {
+        guard !nodes.isEmpty else {return nil}
+        if nodes.count == 1 {
+            return nodes.removeLast()
+        } else {
+            let value = nodes[0]
+            //用最后node作为堆顶
+            nodes[0] = nodes.removeLast()
+            //然后做shiftDown操作，调整符合堆属性
+            shiftDown(0)
+            //返回移除的堆顶
+            return value
+        }
+    }
+    
+    //删除任意节点
+    @discardableResult
+    public mutating func remove(at index: Int) -> T? {
+        guard index < nodes.count else {return nil}
+        let size = nodes.count - 1
+        //判断是否最后一个叶子节点
+        if index != size {
+            //与最后一个交换，数组最后一个元素肯定是叶子节点
+            nodes.swapAt(index, size)
+            //做shiftDown 和 shiftUp操作
+            shiftDown(from: index, until: size)
+            shiftUp(index)
+        }
+        //如果没有交换证明是叶子节点，移除最后一个节点
+        return nodes.removeLast()
     }
     
     
@@ -54,6 +94,19 @@ public struct Heap<T> {
         
         nodes.swapAt(index, first)
         shiftDown(from: first, until: endIndex)
+    }
+    
+    internal mutating func shiftUp(_ index: Int) {
+        var childIndex = index
+        let child = nodes[childIndex]
+        var parentIndex = self.parentIndex(ofIndex: childIndex)
+        //比较两个数是否符合堆关系，并且不能<0,0索引为堆顶
+        while childIndex > 0 && orderCriteria(child,nodes[parentIndex]) {
+            nodes[childIndex] = nodes[parentIndex]
+            childIndex = parentIndex
+            parentIndex = self.parentIndex(ofIndex: childIndex)
+        }
+        nodes[childIndex] = child
     }
     
     //@inline(__always)：如果可以的话，指示编译器始终内联方法。
@@ -89,5 +142,38 @@ public struct Heap<T> {
     
     public var count: Int {
         return nodes.count
+    }
+    public func peek() -> T? {
+        return nodes.first
+    }
+}
+
+
+extension Heap {
+    //添加序列到heap, 像数组就是遵守Sequence协议的序列
+    public mutating func insert<S: Sequence>(_ sequence: S) where S.Iterator.Element == T {
+        for value in sequence {
+            insert(value)
+        }
+    }
+    
+    public mutating func replace(index i: Int, value: T) {
+        guard i < nodes.count else {return}
+        remove(at: i)
+        insert(value)
+    }
+}
+
+extension Heap where T: Equatable {
+    
+    public func index(of node: T) -> Int? {
+        return nodes.firstIndex(of: node)
+    }
+    
+    public mutating func remove(node: T) -> T? {
+        if let index = index(of: node) {
+            return remove(at: index)
+        }
+        return nil
     }
 }
