@@ -94,6 +94,12 @@ open class AdjacencyListGraph<T>: AbstractGraph<T> where T: Hashable {
             edgeList.edges = [edge]
         }
     }
+    
+    open override func addUndirectedEdge(_ vertices: (Vertex<T>, Vertex<T>), withWeight weight: Double?) {
+        addDirectedEdge(vertices.0, to: vertices.1, withWeight: weight)
+        addDirectedEdge(vertices.1, to: vertices.0, withWeight: weight)
+    }
+    
     open override var description: String {
         var rows = [String]()
         for edgeList in adjacencyList {
@@ -112,5 +118,21 @@ open class AdjacencyListGraph<T>: AbstractGraph<T> where T: Hashable {
         }
         return rows.joined(separator: "\n")
     }
+    
+    open override func weightFrom(_ sourceVertex: Vertex<T>, to destinationVertex: Vertex<T>) -> Double? {
+        guard let edges = adjacencyList[sourceVertex.index].edges else {
+            return nil
+        }
+        for edge in edges {
+            if edge.to == destinationVertex {
+                return edge.weight
+            }
+        }
+        return nil
+     }
+    open override func edgesFrom(_ sourceVertex: Vertex<T>) -> [Edge<T>] {
+        return adjacencyList[sourceVertex.index].edges ?? []
+    }
+
 
 }

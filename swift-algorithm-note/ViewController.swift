@@ -21,11 +21,12 @@ class ViewController: UIViewController {
 //        testBoyerMoore()
 //        testStride()
 //        testHeap()
-        testAdjacencyListGraph()
+        let listGraph = AdjacencyListGraph<Int>()
+        let matrixGraph = AdjacencyMatrixGraph<Int>()
+        testGraph(graph: matrixGraph)
     }
-    
-    func testAdjacencyListGraph() {
-        let graph = AdjacencyListGraph<Int>()
+        
+    func testGraph(graph: AbstractGraph<Int>) {
         let v1 = graph.createVertex(1)
         let v2 = graph.createVertex(2)
         let v3 = graph.createVertex(3)
