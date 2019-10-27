@@ -14,18 +14,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 //        testBinarySearch()
 //        testTree()
-//        testBinarySearchTree()
+        testBinarySearchTree()
 //        testBinarySearchTree1()
 //        testMergeSort()
 //        testMergeSort1()
 //        testBoyerMoore()
 //        testStride()
 //        testHeap()
+        
+        
+    }
+    func testGraph() {
         let listGraph = AdjacencyListGraph<Int>()
         let matrixGraph = AdjacencyMatrixGraph<Int>()
         testGraph(graph: matrixGraph)
+
     }
-        
     func testGraph(graph: AbstractGraph<Int>) {
         let v1 = graph.createVertex(1)
         let v2 = graph.createVertex(2)
@@ -129,6 +133,13 @@ class ViewController: UIViewController {
         tree.traversePreOrder { value in print(value) }
         tree.traversePostOrder { value in print(value) }
         
+        print("*****************")
+        tree.traverseInOrderLoopWay()
+        print("*****************")
+        tree.traverseInOrderLoopWay1()
+        print("*****************")
+
+
         print(tree.toArray())
         
         print(tree.height())

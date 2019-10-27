@@ -257,21 +257,54 @@ extension BinarySearchTree {
         }
         return nil
     }
-    
+    //中序遍历
     public func traverseInOrder(process: (T) -> ()) {
         left?.traverseInOrder(process: process)
         process(value)
         right?.traverseInOrder(process: process)
     }
+    //前序遍历
     public func traversePreOrder(process: (T) -> ()) {
         process(value)
         left?.traversePreOrder(process: process)
         right?.traversePreOrder(process: process)
     }
+    //后序遍历
     public func traversePostOrder(process: (T) -> ()) {
         left?.traversePostOrder(process: process)
         right?.traversePostOrder(process: process)
         process(value)
+    }
+    
+    //中序遍历 非递归方法
+    public func traverseInOrderLoopWay() {
+        var stack = [BinarySearchTree<T>]()
+        var node: BinarySearchTree? = self
+        while (node != nil) || (!stack.isEmpty) {
+            while let n = node {
+                stack.append(n)
+                node = node?.left
+            }
+            node = stack.removeLast()
+            print(node!.value)
+            node = node?.right
+        }
+        
+    }
+    
+    public func traverseInOrderLoopWay1() {
+        var stack = [BinarySearchTree<T>]()
+        var node: BinarySearchTree? = self
+        while (node != nil) || (!stack.isEmpty) {
+            if let n = node {
+                stack.append(n)
+                node = n.left
+            } else {
+                node = stack.removeLast()
+                print(node!.value)
+                node = node?.right
+            }
+        }
     }
     
     //map in order
